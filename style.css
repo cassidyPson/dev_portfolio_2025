@@ -9,9 +9,10 @@
     font-family: "Poppins", sans-serif;
 }
 :root{
-    --bg-color: #141414;
+    --bg-color: #e3e3e3;
     --second-bg-color: #252525;
-    --text-color: white;
+    --text-color: rgb(0, 0, 0);
+    --second-text-color: rgb(255, 255, 255);
     --main-color: #21b368;
 }
 
@@ -40,7 +41,7 @@ body{
 }
 .logo{
     font-size: 3rem;
-    color: var(--text-color);
+    color: var(--second-text-color);
     font-weight: 800;
     cursor: pointer;
     transition: 0.3s ease;
@@ -180,16 +181,24 @@ span{
 }
 @keyframes words{
     0%,
-    30%{
+    20%{
         content: 'Software Developer';
     }
-    31%,
-    60%{
+    21%,
+    40%{
         content: 'Programmer';
     }
+    41%,
+    60%{
+        content: 'Computer Science Student'
+    }
     61%,
+    80%{
+        content: 'Technology Addict';
+    }
+    81%,
     100%{
-        content: '';
+        content: 'Pacific Northwest Resident';
     }
 }
 
@@ -218,7 +227,6 @@ span{
         width: calc(100% + 8px)
     }
 }
-
 .about{
     display: flex;
     justify-content: center;
@@ -242,6 +250,7 @@ span{
 .about-content h2{
     text-align: left;
     line-height: 1.5;
+    color: var(--second-text-color);
 }
 .about-content h3{
     font-size: 2.6rem;
@@ -249,6 +258,7 @@ span{
 .about-content p{
     font-size: 1.6rem;
     margin: 2rem 0 3rem;
+    color: var(--second-text-color);
 }
 
 .about-content .text-animation span::before{
@@ -284,41 +294,6 @@ span{
     font-size: 14rem;
     color: var(--main-color)
 }
-.services h2{
-    margin-bottom: 5rem;
-}
-.service-container{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 2rem;
-}
-.service-container .services-box{
-    flex: 1 1 40rem;
-    background: var(--second-bg-color);
-    padding: 3rem 2rem 4rem;
-    border-radius: 2rem;
-    text-align: center;
-    border: 0.2rem solid var(--bg-color);
-    cursor: pointer;
-    transition: 0.4s ease;
-}
-.service-container .services-box:hover{
-    border-color: var(--main-color);
-    transform: scale(1.02);
-    background-color: white;
-    color: black;
-}
-.services-box i{
-    font-size: 7rem;
-    color: var(--main-color);
-}
-.services-box p{
-    font-size: 1.6rem;
-    margin: 1rem 0 3rem;
-}
-
 ::-webkit-scrollbar{
     width: 15px;
 }
@@ -330,7 +305,7 @@ span{
     width: 50px;
 }
 .projects{
-    background-color: var(--second-bg-color);
+    background-color: var(--bg-color);
 }
 .projects h2{
     margin-bottom: 5rem;
@@ -347,7 +322,7 @@ span{
 .projects-container .projects-box{
     position: relative;
     border-radius: 2rem;
-    box-shadow: 0 0 1rem var(--bg-color);
+    box-shadow: 0 0 1rem var(--second-bg-color);
     min-height: 400px;
     min-width: 80vw;
 }
@@ -367,7 +342,6 @@ span{
     text-decoration: none;
     color: white;
 }
-
 .projects-box .projects-info{
     bottom: 0;
     left: 0;
@@ -383,7 +357,7 @@ span{
 }
 .projects-info h4{
     font-size: 3rem;
-    color: white;
+    color: var(--text-color);
     font-weight: 800;
     padding: 10px;
 }
@@ -395,6 +369,8 @@ a .projects-info a p{
 .projects-info p{
     padding: 8px;
     font-size: 18px;
+    color: var(--text-color);
+    width: 60%;
 }
 .projects-info a{
     color: white;
@@ -409,130 +385,6 @@ a .projects-info a p{
 .projects-info a i{
     font-size: 3rem;
     color: var(--main-color);
-}
-
-.skills h2{
-    margin-bottom: 2rem;
-}
-.skills{
-    margin: 0 auto;
-}
-.skill-bars{
-    padding: 25px 30px;
-    background: var(--second-bg-color);
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
-}
-.skill-bars .bar{
-    margin: 20px 0;
-}
-.skill-bars .bar:first-child{
-    margin-top: 0px;
-}
-.skill-bars .bar .info{
-    margin-bottom: 5px;
-}
-.skill-bars .bar .info span{
-    color: white;
-    font-weight: 500;
-    font-size: 17px;
-}
-.skill-bars .bar .progress-line{
-    height: 10px;
-    width: 100%;
-    background-color: white;
-    position: relative;
-    border-radius: 10px;
-}
-.bar .progress-line span{
-    height: 100%;
-    position: absolute;
-    border-radius: 10px;
-    background: #0077ff;
-    cursor: pointer;
-}
-.bar .progress-line.javascript span{
-    width: 100%;
-    background-color: gold;
-    box-shadow: 0 0 25px gold;
-    transition: 0.3s ease;
-}
-.bar .progress-line.javascript span:hover{
-    box-shadow: 0 0 25px gold,
-                0 0 50px gold;
-}
-.bar .progress-line.react span{
-    width: 100%;
-    background-color: rgb(58, 58, 255);
-    box-shadow: 0 0 25px rgb(58, 58, 255);
-    transition: 0.3s ease;
-}
-.bar .progress-line.react span:hover{
-    box-shadow: 0 0 25px rgb(58, 58, 255),
-                0 0 50px rgb(58, 58, 255);
-}
-.bar .progress-line.mongodb span{
-    width: 100%;
-    background-color: greenyellow;
-    box-shadow: 0 0 25px greenyellow;
-    transition: 0.3s ease;
-}
-.bar .progress-line.mongodb span:hover{
-    box-shadow: 0 0 25px greenyellow,
-                0 0 50px greenyellow;
-}
-.bar .progress-line.html span{
-    width: 100%;
-    background-color: orangered;
-    box-shadow: 0 0 25px orangered;
-    transition: 0.3s ease;
-}
-.bar .progress-line.html span:hover{
-    box-shadow: 0 0 25px orangered,
-                0 0 50px orangered;
-}
-.bar .progress-line.css span{
-    width: 100%;
-    background-color: blue;
-    box-shadow: 0 0 25px blue;
-    transition: 0.3s ease;
-}
-.bar .progress-line.css span:hover{
-    box-shadow: 0 0 25px blue,
-                0 0 50px blue;
-}
-.contact{
-    background-color: var(--second-bg-color);
-}
-.contact h2{
-    margin-bottom: 3rem;
-}
-.contact form{
-    max-width: 70rem;
-    margin: 1rem auto;
-    text-align: center;
-    margin-bottom: 3rem;
-}
-.contact form .input-box{
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-.contact form .input-box input,
-.contact form textarea{
-    width: 100%;
-    padding: 1.5rem;
-    font-size: 1.6rem;
-    color: var(--text-color);
-    background: var(--bg-color);
-    border-radius: 0.8rem;
-    margin: 1rem 0;
-    resize: none;
-}
-.contact form .btn{
-    margin-top: 2rem;
 }
 .footer{
     position: relative;
@@ -559,7 +411,6 @@ a .projects-info a p{
     margin: 0 10px;
     transition: 0.3s ease;
 }
-
 .footer .social a:hover{
     transform: scale(1.2)translateY(-10px);
 }
@@ -657,9 +508,6 @@ a .projects-info a p{
     .about img{
         width: 70vw;
         margin-top: 1rem;
-        margin-bottom: 3rem;
-    }
-    .services h2{
         margin-bottom: 3rem;
     }
     .projects h2{
